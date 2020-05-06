@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: white;
+            padding-bottom: 20px;
+
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+
+<div style="width:800px; margin:0 auto; font-size: 16pt">
+    <h1 style="color: steelblue"><u>Recommended Hiking Gear</u></h1>
+    <ul>
+        <li>
+            A messenger so you don't get lost: The Spot Gen3 Satellite GPS ($150, findmespot.com) lets friends know
+            you're safe. Hit the emergency button to dial 911 and summon rescuers.
+            <img src="Images/satellite.jpg" style="width: 100px; height: 100px">
+            <br><a href="https://www.findmespot.com/en-us/?avad=55097_d197073b5" target="_blank"> Find it here </a>
+            <hr>
+        </li>
+        <li>
+            An ultralight backpack. This one from Six Moon Designs ($230, sixmoondesigns.com) was designed by
+            long-distance hikers. Support weight at the hips, not the shoulders, to avoid back pain.
+            <img src="Images/backpack.jpg" style="width: 100px; height: 100px">
+            <br><a href="https://www.sixmoondesigns.com/" target="_blank"> Find it here </a>
+            <hr>
+        </li>
+        <li>
+            A compass
+            <img src="Images/compass.jpg" style="width: 100px; height: 100px">
+        </li>
+        <li>
+            A good pair of hiking boots
+            <img src="Images/boots.jpeg" style="width: 90px; height: 90px">
+        </li>
+        <li>
+            Quick drying pants/shorts depending on weather and terrain
+            <img src="Images/pants.jpg" style="width: 85px; height: 150px">
+        </li>
+        <li>
+            Long sleeve shirt for bugs and the sun
+            <img src="Images/shirt.jpg" style="width: 95px; height: 100px">
+        </li>
+        <li>
+            Lip balm to protect your lips from the sun
+            <img src="Images/lip_balm.jpg" style="width: 100px; height: 100px">
+        </li>
+        <li>
+            Extra water
+            <img src="Images/cantine.jpg" style="width: 95px; height: 100px">
+        </li>
+        <li>
+            Trail snacks
+            <img src="Images/snacks.jpg" style="width: 95px; height: 100px">
+        </li>
+        <li>
+            Bug Spray
+            <img src="Images/bug_spray.jpg" style="width: 95px; height: 100px">
+        </li>
+    </ul>
+</div>
+
+
+<hr style="width: 600px">
+<div class="w3-content w3-section" style="max-width:500px; margin: 0 auto;">
+    <img class="mySlides" src="Images/ss1.jpeg" style="width:100%">
+    <img class="mySlides" src="Images/ss2.jpeg" style="width:100%">
+    <img class="mySlides" src="Images/ss3.jpeg" style="width:100%">
+</div>
+
+
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 3000); // Change image every 4 seconds
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 50%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 70%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+<button>Use Current Location</button>
+<button>Show Trails By City</button>
+<br><br><br>
+
+<select name="country" class="countries" id="countryId">
+    <option value="">Select Country</option>
+</select>
+<select name="state" class="states" id="stateId">
+    <option value="">Select State</option>
+</select>
+<select name="city" class="cities" id="cityId">
+    <option value="">Select City</option>
+</select>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//geodata.solutions/includes/countrystatecity.js"></script>
+
+<button>Search</button><br>
+<button id="myButton">Map</button>
+
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2ryo1NSmwoMknlv_YHfMGvCnX9fKnz3w&callback=initMap"
+        async defer></script>
+
+</body>
+
+<script>
+
+
+
+    document.getElementById("myButton").onclick = function () {
+        var lat = 30.332184;
+        var lng = 81.655647;
+        var place_name = "Reddie Point Preserve";
+        setMarkers(lat, lng, place_name);  // use it to pass lat and lng during each iteration
+    };
+
+
+    var map;
+    function initMap() {
+        var myLatLng = {lat: parseFloat(localStorage.getItem("lat")), lng: parseFloat(localStorage.getItem("lng"))};
+        alert(parseFloat(localStorage.getItem("lat")));
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+        });
+
+     //   setMarkers();
+    }
+
+    function setMarkers(lat, lng, place_name) {
+        var marker = new google.maps.Marker({
+            position: {lat: lat, lng: lng},
+            map: map,
+            title: place_name
+        });
+
+        marker.setMap(map);
+    }
+
+</script>
+
+<button type="button" onclick="myFunction(this)" id="1">Button1</button>
+<button type="button" onclick="myFunction(this)" id="2">Button2</button>
+<button type="button" onclick="myFunction(this)" id="3">Button3</button>
+
+<script>function myFunction(elem) {
+    alert(elem.id);
+    localStorage.setItem("current_location_selected", elem.id);  // will be used to access the array on the map tab sheet
+   // document.location.href('./Trails.html')
+}</script>
+
+
+
+</html>
